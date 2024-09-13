@@ -1,7 +1,7 @@
 import altair as alt
 import pandas as pd
 import pandas as pd
-#import plotly.graph_objects as go
+import plotly.graph_objects as go
 
 def create_base_chart(df):
     base_chart = alt.Chart(df).mark_circle(size=25).encode(
