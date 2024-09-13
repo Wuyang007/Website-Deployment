@@ -160,7 +160,7 @@ elif selected_section == "Professor":
     st.dataframe(prof_paper_df)
     st.markdown('<br>', unsafe_allow_html=True) 
     st.title("Compare the professor")
-
+'''
     col1, col2 = st.columns(2)
     with col1:
         selected_university_1 = st.selectbox("Select the first university", options=df['university_name'].unique())
@@ -174,7 +174,7 @@ elif selected_section == "Professor":
         professor_name_input_2 = st.selectbox("Select the second professor", options=professor_list_2)
         fig_2 = profile_individual(str(selected_university_2), str(professor_name_input_2))
         st.plotly_chart(fig_2)
-
+'''
 
 #--------------------------------------------------------------------------------------------
 # following is for the Professor page
