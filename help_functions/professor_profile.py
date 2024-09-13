@@ -1,6 +1,5 @@
 import altair as alt
 import pandas as pd
-from fuzzywuzzy import process
 import pandas as pd
 import plotly.graph_objects as go
 
@@ -60,47 +59,6 @@ def univ_bar(selected_university, df):
     return chart
 
 
-def highlight_professor_chart(professor_name, selected_university, df):
-    university_df = df[df['university_name'] == selected_university]
-    matched_professor = process.extractOne(professor_name, university_df['professor_name'])[0]
-    
-    base_chart = alt.Chart(university_df).mark_circle().encode(
-        x=alt.X('num_of_pub', title='Number of publications per year'),
-        #y='ave_if',
-        y=alt.Y('ave_if', scale=alt.Scale(type='log', domain=[0.5, 100]), title='Average impact factor'),
-        color=alt.Color('Community Contribution:N',scale=alt.Scale(scheme='tableau10')),
-        #opacity=alt.value(0.6),
-        tooltip=[alt.Tooltip('university_name:N', title='University'),
-                alt.Tooltip('professor_name:N', title='Professor'),
-                alt.Tooltip('num_of_pub:Q', title='Number of Publications'),
-                alt.Tooltip('ave_if:Q', title='Average Impact Factor'),
-                alt.Tooltip('impact_level:N', title='Impact Level')],
-    ).properties(
-        width=800, 
-        height=400,
-        title='Professor Profiles: Publications vs Impact Factor'
-    )
-
-    professor_df = university_df[university_df['professor_name']==matched_professor]
-    prof_chart = alt.Chart(professor_df).mark_point(size=75,filled=True,  color='black').encode(
-        x=alt.X('num_of_pub', title=''),
-        y=alt.Y('ave_if', scale=alt.Scale(type='log', domain=[0.5, 100]), title=''),
-        #color=alt.Color('impact_level:N', scale=alt.Scale(scheme='viridis'), title='Impact Level'),
-        #size=alt.value(50),
-        tooltip=[alt.Tooltip('university_name:N', title='University'),
-                alt.Tooltip('professor_name:N', title='Professor'),
-                alt.Tooltip('num_of_pub:Q', title='Number of Publications'),
-                alt.Tooltip('ave_if:Q', title='Average Impact Factor'),
-                alt.Tooltip('impact_level:N', title='Impact Level')],
-    ).properties(
-        width=800, 
-        height=400,
-        title='Professor Profiles: Publications vs Impact Factor'
-    )
-    chart = base_chart + prof_chart
-
-
-    return chart
 
 def profile_individual(university, name):
     df = pd.read_csv('../datasets/prof_topic.csv')

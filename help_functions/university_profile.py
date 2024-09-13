@@ -1,11 +1,7 @@
 import pandas as pd
 import numpy as np
-import plotly.express as px
 import altair as alt
 
-import matplotlib.pyplot as plt
-import io
-import base64
 
 
 def draw_university_profile(university_df):
