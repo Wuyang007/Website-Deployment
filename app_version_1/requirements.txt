@@ -1,9 +1,2 @@
-altair==5.4.1
-fuzzywuzzy==0.18.0
-numpy==2.1.1
-pandas==2.2.2
-Pillow==10.0.1
-Pillow==10.4.0
 plotly==5.23.0
-streamlit==1.38.0
-transformers==4.44.2
+
