@@ -11,7 +11,7 @@ import sys
 sys.path.append('../help_functions')
 
 from university_profile import draw_university_profile
-from professor_profile import create_base_chart,  profile_individual, find_best_paper, prof_univ_bar, univ_bar
+from professor_profile import create_base_chart, find_best_paper, prof_univ_bar, univ_bar #profile_individual,
 from topic_profile import topic_distribution
 from topic_time_series import draw_time_series_plot
 from transformers import T5Tokenizer, T5ForConditionalGeneration
