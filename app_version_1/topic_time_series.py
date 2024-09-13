@@ -4,12 +4,12 @@ import numpy as np
 import ast
 
 def draw_time_series_plot(topic):
-    df = pd.read_csv('../datasets/for_topic_along_time.csv')
+    df = pd.read_csv('datasets/for_topic_along_time.csv')
     df['publish_date'] = pd.to_datetime(df['publish_date'])
     df['year_month'] = df['publish_date'].dt.to_period('M')
     df['year_month'] = df['year_month'].dt.to_timestamp()
 
-    topic_distribution_df = pd.read_csv('../datasets/topic_distribution.csv')
+    topic_distribution_df = pd.read_csv('datasets/topic_distribution.csv')
     topic_distribution_df = topic_distribution_df.set_index('index')
 
     def convert_to_list(str_list):
