@@ -61,7 +61,7 @@ def univ_bar(selected_university, df):
 
 
 def profile_individual(university, name):
-    df = pd.read_csv('../datasets/prof_topic.csv')
+    df = pd.read_csv('datasets/prof_topic.csv')
     unique_name = university+'--'+name
     person_info = df[df['Unnamed: 0']==unique_name]
 
