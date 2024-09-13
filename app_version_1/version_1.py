@@ -26,7 +26,7 @@ from topic_time_series import draw_time_series_plot
 st.set_page_config(page_title="Prof-Insight", layout="wide")
 
 
-st.sidebar.image('../datasets/images/logo.png', width=150)
+st.sidebar.image('datasets/images/logo.png', width=150)
 
 #st.sidebar.title("Prof-Insight")
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
@@ -77,7 +77,7 @@ if selected_section == "Overview":
         Discover Your Ideal Graduate Mentor with Prof-Insight!
     </div>
 """, unsafe_allow_html=True)
-    st.image('../datasets/images/Picture1.png', caption='')
+    st.image('datasets/images/Picture1.png', caption='')
     st.markdown("""
     <div class="info-bar">
         Biomedical Engineering \t  |   Top 35 Universities \t  |   93,200 Manuscripts \t  | \t  1,880 Professors
@@ -96,7 +96,7 @@ elif selected_section == "University":
                 devices, diagnostic tools, and therapies to enhance patient care and health outcomes.''')
     
 
-    university_df = pd.read_csv('../datasets/numeric_table/university_profile.csv')
+    university_df = pd.read_csv('datasets/numeric_table/university_profile.csv')
     university_chart = draw_university_profile(university_df)
     st.altair_chart(university_chart, use_container_width=True)
     st.markdown('<br><br>', unsafe_allow_html=True) 
@@ -126,7 +126,7 @@ elif selected_section == "University":
 elif selected_section == "Professor":
     st.header("Professors")
     st.title("Professor Impact Finder")
-    df = pd.read_csv('../datasets/professor_profile.csv')
+    df = pd.read_csv('datasets/professor_profile.csv')
     df = df[['university_name', 'professor_name', 'ave_if', 'num_of_pub', 'overall_impact', 'impact_level','Community Contribution']]
 
     # Display the base chart
@@ -183,7 +183,7 @@ elif selected_section == "topics":
     st.header("Research Topics in Biomedical Engineering")
     
 
-    image_folder = '../datasets/topics'
+    image_folder = 'datasets/topics'
     image_files = [os.path.join(image_folder, file) for file in os.listdir(image_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
 
     # Display images in a grid
@@ -200,23 +200,23 @@ elif selected_section == "topics":
             st.image(image, use_column_width=True)
     st.markdown('<br>', unsafe_allow_html=True) 
     st.write("#### All 93201 papers")
-    st.image('../datasets/images/pca_plot.png', use_column_width=True)
+    st.image('datasets/images/pca_plot.png', use_column_width=True)
 
     st.markdown('<br><br>', unsafe_allow_html=True) 
 
     st.write("#### 20 subtopics")
-    topic_dist_df = pd.read_csv('../datasets/topic_distribution.csv')
+    topic_dist_df = pd.read_csv('datasets/topic_distribution.csv')
     topic_dist_chart = topic_distribution(topic_dist_df)
     st.altair_chart(topic_dist_chart, use_container_width=True)
 
     st.markdown('<br><br>', unsafe_allow_html=True) 
 
     st.write("#### University_topics")
-    st.image('../datasets/images/university_topic.png', use_column_width=True)
+    st.image('datasets/images/university_topic.png', use_column_width=True)
     st.markdown('<br><br>', unsafe_allow_html=True) 
 
     st.write("#### Along the time")
-    topic_name_df = pd.read_csv('../datasets/topic_distribution.csv')
+    topic_name_df = pd.read_csv('datasets/topic_distribution.csv')
     topic_list = list(topic_name_df['index'].unique())
 
     selected_topic_1 = st.selectbox("Select The First Research Topic", options=topic_list)
