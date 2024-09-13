@@ -15,7 +15,7 @@ from professor_profile import create_base_chart, find_best_paper, prof_univ_bar,
 from topic_profile import topic_distribution
 from topic_time_series import draw_time_series_plot
 #from transformers import T5Tokenizer, T5ForConditionalGeneration
-#from chatbot import generate_response
+from chatbot import generate_response
 
 
 
@@ -253,7 +253,7 @@ elif selected_section == "About this project":
     st.header("Section 3")
 
 #    st.write("Add any additional information or visualizations here.")
-    st.image('../datasets/images/pipeline_schematics.png', caption='Pipeline for data analysis', use_column_width=True)
+    st.image('datasets/images/pipeline_schematics.png', caption='Pipeline for data analysis', use_column_width=True)
 
     st.write("Author: Wuyang Gao")
     st.write("Last updated: Sep 6, 2024")
