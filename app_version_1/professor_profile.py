@@ -59,7 +59,7 @@ def univ_bar(selected_university, df):
     return chart
 
 
-'''
+
 def profile_individual(university, name):
     df = pd.read_csv('../datasets/prof_topic.csv')
     unique_name = university+'--'+name
@@ -109,7 +109,7 @@ def profile_individual(university, name):
 
 
     return fig
-'''
+
 def find_best_paper(university, name):
     paper_df = pd.read_csv('datasets/paper_with_title.csv')
     personal_df = paper_df[paper_df['university']==university]
