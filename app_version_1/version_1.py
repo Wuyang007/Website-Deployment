@@ -160,24 +160,25 @@ elif selected_section == "Professor":
     st.dataframe(prof_paper_df)
     st.markdown('<br>', unsafe_allow_html=True) 
     st.title("Compare the professor")
-'''
-    col1, col2 = st.columns(2)
-    with col1:
-        selected_university_1 = st.selectbox("Select the first university", options=df['university_name'].unique())
-        professor_list_1 = df[df['university_name']==selected_university_1]['professor_name'].unique()
-        professor_name_input_1 = st.selectbox("Select the first professor:", options=professor_list_1)
-        fig_1 = profile_individual(str(selected_university_1), str(professor_name_input_1))
-        st.plotly_chart(fig_1)
-    with col2:
-        selected_university_2 = st.selectbox("Select the second university", options=df['university_name'].unique())
-        professor_list_2 = df[df['university_name']==selected_university_2]['professor_name'].unique()
-        professor_name_input_2 = st.selectbox("Select the second professor", options=professor_list_2)
-        fig_2 = profile_individual(str(selected_university_2), str(professor_name_input_2))
-        st.plotly_chart(fig_2)
-'''
+
+
+ #   col1, col2 = st.columns(2)
+ #   with col1:
+ #       selected_university_1 = st.selectbox("Select the first university", options=df['university_name'].unique())
+ #       professor_list_1 = df[df['university_name']==selected_university_1]['professor_name'].unique()
+ #       professor_name_input_1 = st.selectbox("Select the first professor:", options=professor_list_1)
+ #       fig_1 = profile_individual(str(selected_university_1), str(professor_name_input_1))
+ #       st.plotly_chart(fig_1)
+ #   with col2:
+ #       selected_university_2 = st.selectbox("Select the second university", options=df['university_name'].unique())
+ #       professor_list_2 = df[df['university_name']==selected_university_2]['professor_name'].unique()
+ #       professor_name_input_2 = st.selectbox("Select the second professor", options=professor_list_2)
+ #       fig_2 = profile_individual(str(selected_university_2), str(professor_name_input_2))
+ #       st.plotly_chart(fig_2)
 
 #--------------------------------------------------------------------------------------------
 # following is for the Professor page
+
 elif selected_section == "topics":
     st.header("Research Topics in Biomedical Engineering")
     
