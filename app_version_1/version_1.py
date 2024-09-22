@@ -33,7 +33,7 @@ st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.text_input("Search")
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
-selected_section = st.sidebar.radio("Go to", ["Overview", "University", 'Professor', 'topics', "Ask us", "About this project"])
+selected_section = st.sidebar.radio("Go to", ["Overview", "University", 'Professor', 'Topics', 'Current Opportunities', "Ask us", "About this project"])
 
 
 st.sidebar.markdown("<div style='height: 100%;'></div>", unsafe_allow_html=True)
@@ -179,7 +179,7 @@ elif selected_section == "Professor":
 #--------------------------------------------------------------------------------------------
 # following is for the Professor page
 
-elif selected_section == "topics":
+elif selected_section == "Topics":
     st.header("Research Topics in Biomedical Engineering")
     
 
@@ -231,7 +231,8 @@ elif selected_section == "topics":
  
 
 
-
+elif selected_section == "Current Opportunities":
+    st.header("Current graduate positions as below:")
 
 
 
