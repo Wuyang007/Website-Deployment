@@ -74,7 +74,7 @@ if selected_section == "Overview":
 """, unsafe_allow_html=True)
     st.markdown("""
     <div class="highlighted-text">
-        Discover Your Ideal Graduate Mentor with Prof-Insight!
+        Prof-Insight: Your personal assistant for graduate career!
     </div>
 """, unsafe_allow_html=True)
     st.image('datasets/images/Picture1.png', caption='')
