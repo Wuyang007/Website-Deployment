@@ -23,7 +23,7 @@ st.set_page_config(page_title="Prof-Insight", layout="wide")
 st.sidebar.image('../datasets/images/logo.png', width=150)
 
 #st.sidebar.title("Prof-Insight")
-selected_section = st.sidebar.radio("Go to", ["Overview", "University", 'Professor', 'topics', "Ask us", "About this project", 'Contact us'])
+selected_section = st.sidebar.radio("Go to", ["Overview", "University", 'Professor', 'Topics', 'Current Oppotunities', "Ask us", "About this project", 'Contact us'])
 
 # Create a header with a tag at the top left
 if selected_section == "Overview":
@@ -90,7 +90,7 @@ elif selected_section == "Professor":
     st.dataframe(prof_paper_df)
 
 
-elif selected_section == "topics":
+elif selected_section == "Topics":
     st.header("Research Topics in Biomedical Engineering")
     
 
@@ -147,7 +147,8 @@ elif selected_section == "topics":
     st.altair_chart(topic_chart_1, use_container_width=True)
  
 
-
+elif selected_section == "Current Opportunities":
+    st.header("Current graduate opportunities in North America:")
 
 
 
