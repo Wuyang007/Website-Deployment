@@ -243,14 +243,17 @@ elif selected_section == "Ask us":
     AZURE_API_KEY = '5f3dfecbd34d4bed939cd0e4b7abed63'  # Replace with your actual API key
     AZURE_ENDPOINT = 'https://prof-insight-ai-service.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview'
     
-    def get_azure_response(prompt):
+    def get_azure_response(user_input):
         headers = {
             'Content-Type': 'application/json',
             'api-key': AZURE_API_KEY
         }
         
+        # Constructing the data payload for chat models
         data = {
-            "prompt": prompt,
+            "messages": [
+                {"role": "user", "content": user_input}
+            ],
             "max_tokens": 100  # Control response length
         }
         
@@ -258,7 +261,7 @@ elif selected_section == "Ask us":
         
         if response.status_code == 200:
             response_json = response.json()
-            return response_json['choices'][0]['text']  # Get response text
+            return response_json['choices'][0]['message']['content']  # Get response text
         else:
             return f"Error: {response.status_code}, {response.text}"
 
