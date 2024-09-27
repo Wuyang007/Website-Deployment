@@ -241,7 +241,7 @@ elif selected_section == "Ask us":
     st.title("Questions:")
     user_input = st.text_input("You: ", "")
     AZURE_API_KEY = '5f3dfecbd34d4bed939cd0e4b7abed63'  # Replace with your actual API key
-    AZURE_ENDPOINT = 'https://prof-insight-ai-service.cognitiveservices.azure.com/'
+    AZURE_ENDPOINT = 'https://prof-insight-ai-service.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview'
     
     def get_azure_response(prompt):
         headers = {
