@@ -267,7 +267,7 @@ elif selected_section == "Ask us":
 
     if user_input:
         response = get_azure_response(user_input)
-        st.write(f"Prof-insight: {response}")
+        st.write(f"Prof-insight:\n {response}")
     
 
 elif selected_section == "About this project":
