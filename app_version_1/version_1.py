@@ -254,7 +254,7 @@ elif selected_section == "Ask us":
             "messages": [
                 {"role": "user", "content": user_input}
             ],
-            "max_tokens": 100  # Control response length
+            "max_tokens": 500  # Control response length
         }
         
         response = requests.post(AZURE_ENDPOINT, headers=headers, json=data)
