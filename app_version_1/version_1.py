@@ -249,36 +249,21 @@ elif selected_section == "Ask us":
             'api-key': AZURE_API_KEY
         }
         
-        # First, perform retrieval
-        retrieval_data = {
-            "query": user_input,  # Your query for retrieval
-            "top_k": 5  # Adjust based on how many documents you want to retrieve
-        }
-        
-        retrieval_response = requests.post(AZURE_ENDPOINT, headers=headers, json=retrieval_data)
-        
-        if retrieval_response.status_code != 200:
-            return f"Error retrieving documents: {retrieval_response.status_code}, {retrieval_response.text}"
-        
-        retrieved_docs = retrieval_response.json()
-
-        # Now, pass retrieved documents to the generation model
-        generation_data = {
+        # Constructing the data payload for chat models
+        data = {
             "messages": [
-                {"role": "user", "content": user_input},
-                {"role": "system", "content": f"Here are the retrieved documents: {retrieved_docs}"}
+                {"role": "user", "content": user_input}
             ],
-            "max_tokens": 100  # Control response length
+            "max_tokens": 500  # Control response length
         }
         
-        response = requests.post(AZURE_ENDPOINT, headers=headers, json=generation_data)
-
+        response = requests.post(AZURE_ENDPOINT, headers=headers, json=data)
+        
         if response.status_code == 200:
             response_json = response.json()
             return response_json['choices'][0]['message']['content']  # Get response text
         else:
-            return f"Error generating response: {response.status_code}, {response.text}"
-
+            return f"Error: {response.status_code}, {response.text}"
 
     if user_input:
         response = get_azure_response(user_input)
