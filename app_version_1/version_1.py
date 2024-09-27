@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import requests
 
 import streamlit as st
 import os
@@ -239,15 +240,31 @@ elif selected_section == "Current Opportunities":
 elif selected_section == "Ask us":
     st.title("Questions:")
     user_input = st.text_input("You: ", "")
-
-    # When the user presses the button, generate a response
-    if st.button("Send"):
-        if user_input:
-            # Generate chatbot response
-            response = generate_response(user_input)
-            st.write(f"**Chatbot**: {response}")
+    AZURE_API_KEY = '5f3dfecbd34d4bed939cd0e4b7abed63'  # Replace with your actual API key
+    AZURE_ENDPOINT = 'https://prof-insight-ai-service.cognitiveservices.azure.com/'
+    
+    def get_azure_response(prompt):
+        headers = {
+            'Content-Type': 'application/json',
+            'api-key': AZURE_API_KEY
+        }
+        
+        data = {
+            "prompt": prompt,
+            "max_tokens": 100  # Control response length
+        }
+        
+        response = requests.post(AZURE_ENDPOINT, headers=headers, json=data)
+        
+        if response.status_code == 200:
+            response_json = response.json()
+            return response_json['choices'][0]['text']  # Get response text
         else:
-            st.write("Please enter a message.")
+            return f"Error: {response.status_code}, {response.text}"
+
+    if user_input:
+        response = get_azure_response(user_input)
+        st.write(f"AI Response: {response}")
     
 
 elif selected_section == "About this project":
