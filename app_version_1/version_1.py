@@ -283,8 +283,7 @@ elif selected_section == "Ask us":
     # Add a button to clear the chat
     if st.button("Clear Chat"):
         st.session_state.messages.clear()
-    
-
+        
 elif selected_section == "About this project":
     st.header("Section 3")
 
