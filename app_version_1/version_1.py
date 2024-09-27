@@ -238,7 +238,7 @@ elif selected_section == "Current Opportunities":
 
 
 elif selected_section == "Ask us":
-    st.title("Questions:")
+    st.title("Chat with Prof-insight:")
     user_input = st.text_input("You: ", "")
     AZURE_API_KEY = '5f3dfecbd34d4bed939cd0e4b7abed63'  # Replace with your actual API key
     AZURE_ENDPOINT = 'https://prof-insight-ai-service.cognitiveservices.azure.com/openai/deployments/gpt-4o/chat/completions?api-version=2023-03-15-preview'
@@ -266,8 +266,23 @@ elif selected_section == "Ask us":
             return f"Error: {response.status_code}, {response.text}"
 
     if user_input:
-        response = get_azure_response(user_input)
-        st.write(f"AI Response: {response}")
+        # Get the AI response
+        ai_response = get_azure_response(user_input)
+
+        # Append messages to chat history
+        st.session_state.messages.append({"role": "user", "content": user_input})
+        st.session_state.messages.append({"role": "assistant", "content": ai_response})
+
+    # Display chat history
+    for message in st.session_state.messages:
+        if message['role'] == 'user':
+            st.write(f"You: {message['content']}")
+        else:
+            st.write(f"Prof-insight: {message['content']}")
+
+    # Add a button to clear the chat
+    if st.button("Clear Chat"):
+        st.session_state.messages.clear()
     
 
 elif selected_section == "About this project":
