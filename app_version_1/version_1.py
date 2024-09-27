@@ -266,24 +266,10 @@ elif selected_section == "Ask us":
             return f"Error: {response.status_code}, {response.text}"
 
     if user_input:
-        # Get the AI response
-        ai_response = get_azure_response(user_input)
+        response = get_azure_response(user_input)
+        st.write(f"Prof-insight: {response}")
+    
 
-        # Append messages to chat history
-        st.session_state.messages.append({"role": "user", "content": user_input})
-        st.session_state.messages.append({"role": "assistant", "content": ai_response})
-
-    # Display chat history
-    for message in st.session_state.messages:
-        if message['role'] == 'user':
-            st.write(f"You: {message['content']}")
-        else:
-            st.write(f"Prof-insight: {message['content']}")
-
-    # Add a button to clear the chat
-    if st.button("Clear Chat"):
-        st.session_state.messages.clear()
-        
 elif selected_section == "About this project":
     st.header("Section 3")
 
