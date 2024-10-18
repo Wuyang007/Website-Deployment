@@ -98,7 +98,7 @@ elif selected_section == "University":
     st.write("### Top Universities")
 
     # Create columns for the grid layout
-    num_columns = 12  # Number of columns in the gallery
+    num_columns = 18  # Number of columns in the gallery
     cols = st.columns(num_columns)
     desired_height = 200  # Adjust this value as needed
 
