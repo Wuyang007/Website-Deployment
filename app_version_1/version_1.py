@@ -101,9 +101,9 @@ elif selected_section == "University":
 
     # Loop through images and display them
     for idx, img_file in enumerate(image_files):
-        if idx % 35 == 0 and idx != 0:
+        if idx % 18 == 0 and idx != 0:
             cols = st.columns(5)  # Create new row
-        with cols[idx % 35]:  # Adjust to use 5 columns
+        with cols[idx % 18]:  # Adjust to use 5 columns
             image = Image.open(img_file)
             # Resize image while maintaining aspect ratio
             aspect_ratio = image.width / image.height
