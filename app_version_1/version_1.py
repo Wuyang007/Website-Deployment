@@ -90,15 +90,23 @@ if selected_section == "Overview":
 #--------------------------------------------------------------------------------------------
 # following is for the university page
 elif selected_section == "University":
-
+    st.title("University Profiles in Biomedical Engineering")
     image_folder = 'datasets/university_logo'
     image_files = [os.path.join(image_folder, file) for file in os.listdir(image_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
 
     # Display images in a grid
-    st.write("#### Top Universities")
+    st.write("### Top Universities")
     cols = st.columns(8)  # Create 5 columns
 
-    st.title("University Profiles in Biomedical Engineering")
+    # Loop through images and display them
+    for idx, img_file in enumerate(image_files):
+        if idx % 8 == 0 and idx != 0:
+            cols = st.columns(5)  # Create new row
+        with cols[idx % 8]:
+            image = Image.open(img_file)
+            st.image(image, use_column_width=True)
+
+    
     st.header("Universities faculty community and publications")
     st.markdown('''Biomedical Engineering blends engineering and biology to create cutting-edge medical technologies. 
                 Many top-ranking universities now offer specialized programs in this field, driving advancements in medical 
