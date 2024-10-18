@@ -96,15 +96,15 @@ elif selected_section == "University":
 
     # Display images in a grid
     st.write("### Top Universities")
-    cols = st.columns(8)  # Create 5 columns
+    cols = st.columns(18)  # Create 5 columns
 
     # Loop through images and display them
     for idx, img_file in enumerate(image_files):
-        if idx % 8 == 0 and idx != 0:
+        if idx % 18 == 0 and idx != 0:
             cols = st.columns(5)  # Create new row
-        with cols[idx % 8]:
+        with cols[idx % 18]:
             image = Image.open(img_file)
-            st.image(image, use_column_width=True)
+            st.image(image)
 
     
     st.header("Universities faculty community and publications")
