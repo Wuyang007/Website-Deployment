@@ -91,7 +91,7 @@ if selected_section == "Overview":
 # following is for the university page
 elif selected_section == "University":
 
-    image_folder = 'datasets/university_logo/'
+    image_folder = 'datasets/university_logo'
     image_files = [os.path.join(image_folder, file) for file in os.listdir(image_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
 
     # Display images in a grid
