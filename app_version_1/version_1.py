@@ -94,23 +94,34 @@ elif selected_section == "University":
     image_folder = 'datasets/university_logo'
     image_files = [os.path.join(image_folder, file) for file in os.listdir(image_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
 
-    # Display images in a grid
+    # Display images in a gallery
     st.write("### Top Universities")
-    cols = st.columns(35)  # Create 5 columns
+
+    # Create columns for the grid layout
+    num_columns = 5  # Number of columns in the gallery
+    cols = st.columns(num_columns)
     desired_height = 200  # Adjust this value as needed
 
-    # Loop through images and display them
+    # Loop through images and display them in a grid
     for idx, img_file in enumerate(image_files):
-        if idx % 18 == 0 and idx != 0:
-            cols = st.columns(5)  # Create new row
-        with cols[idx % 18]:  # Adjust to use 5 columns
-            image = Image.open(img_file)
-            # Resize image while maintaining aspect ratio
-            aspect_ratio = image.width / image.height
-            new_width = int(desired_height * aspect_ratio)  # Calculate new width based on desired height
-            st.image(image.resize((new_width, desired_height)))  # Resize and display the image
+        # Determine which column to use for the current image
+        col_index = idx % num_columns
 
+        # Check if we need to create a new row (this is optional)
+        if idx > 0 and col_index == 0:
+            cols = st.columns(num_columns)  # Create new row of columns
 
+        # Open and resize the image while maintaining aspect ratio
+        image = Image.open(img_file)
+        aspect_ratio = image.width / image.height
+        new_width = int(desired_height * aspect_ratio)  # Calculate new width based on desired height
+
+        # Display the image in the respective column
+        with cols[col_index]:
+            st.image(image.resize((new_width, desired_height)), use_column_width='auto')  # Resize and display the image
+
+            # Optional: Add a caption (use os.path.basename to extract the file name)
+            st.caption(os.path.basename(img_file).split('.')[0])  # Display file name as caption
     
     st.header("Universities faculty community and publications")
     st.markdown('''Biomedical Engineering blends engineering and biology to create cutting-edge medical technologies. 
