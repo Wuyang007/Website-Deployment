@@ -123,6 +123,8 @@ elif selected_section == "University":
             # Optional: Add a caption (use os.path.basename to extract the file name)
             #st.caption(os.path.basename(img_file).split('.')[0])  # Display file name as caption
     
+    st.markdown('<br>', unsafe_allow_html=True) 
+    
     st.header("Universities faculty community and publications")
     st.markdown('''Biomedical Engineering blends engineering and biology to create cutting-edge medical technologies. 
                 Many top-ranking universities now offer specialized programs in this field, driving advancements in medical 
