@@ -96,15 +96,20 @@ elif selected_section == "University":
 
     # Display images in a grid
     st.write("### Top Universities")
-    cols = st.columns(18)  # Create 5 columns
+    cols = st.columns(10)  # Create 5 columns
+    desired_height = 200  # Adjust this value as needed
 
     # Loop through images and display them
     for idx, img_file in enumerate(image_files):
-        if idx % 18 == 0 and idx != 0:
+        if idx % 10 == 0 and idx != 0:
             cols = st.columns(5)  # Create new row
-        with cols[idx % 18]:
+        with cols[idx % 10]:  # Adjust to use 5 columns
             image = Image.open(img_file)
-            st.image(image)
+            # Resize image while maintaining aspect ratio
+            aspect_ratio = image.width / image.height
+            new_width = int(desired_height * aspect_ratio)  # Calculate new width based on desired height
+            st.image(image.resize((new_width, desired_height)), use_column_width='auto')  # Resize and display the image
+
 
     
     st.header("Universities faculty community and publications")
