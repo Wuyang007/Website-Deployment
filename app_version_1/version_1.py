@@ -98,7 +98,7 @@ elif selected_section == "University":
     st.write("### Top Universities")
 
     # Create columns for the grid layout
-    num_columns = 10  # Number of columns in the gallery
+    num_columns = 12  # Number of columns in the gallery
     cols = st.columns(num_columns)
     desired_height = 200  # Adjust this value as needed
 
@@ -121,7 +121,7 @@ elif selected_section == "University":
             st.image(image.resize((new_width, desired_height)), use_column_width='auto')  # Resize and display the image
 
             # Optional: Add a caption (use os.path.basename to extract the file name)
-            st.caption(os.path.basename(img_file).split('.')[0])  # Display file name as caption
+            #st.caption(os.path.basename(img_file).split('.')[0])  # Display file name as caption
     
     st.header("Universities faculty community and publications")
     st.markdown('''Biomedical Engineering blends engineering and biology to create cutting-edge medical technologies. 
