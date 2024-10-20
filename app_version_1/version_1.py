@@ -157,7 +157,10 @@ elif selected_section == "University":
 
     # Display the styled dataframe
     
-    st.write(styled_table)
+    html_table = styled_table.render(escape=False)  # Set escape=False to allow HTML rendering
+
+    # Display the styled DataFrame with clickable links
+    st.markdown(html_table, unsafe_allow_html=True)
 
     # university_show_df = university_show_df.set_index('University')
     
