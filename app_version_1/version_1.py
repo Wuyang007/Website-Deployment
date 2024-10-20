@@ -145,18 +145,20 @@ elif selected_section == "University":
     styled_table = university_show_df.style.set_properties(**{
         'font-size': '14px',
         'font-family': 'Arial',
-        'background-color': '#f9f9f9',  # Slightly different light grey for a modern look
-        'border': '1px solid #ddd',       # Light grey border for a subtle look
-        'text-align': 'left',             # Align text to the left for readability
+        'background-color': '#f9f9f9',
+        'border': '1px solid #ddd',
+        'text-align': 'left',
     }).set_table_styles([
-        {'selector': 'thead th', 'props': [('font-weight', 'bold'), ('background-color', '#e0e0e0'), ('border-bottom', '2px solid #ccc')]},  # Bold headers with a slightly darker background
-        {'selector': 'tbody tr:hover', 'props': [('background-color', '#f1f1f1')]},  # Highlight rows on hover
-        {'selector': 'tbody td', 'props': [('padding', '8px')]},  # Add padding to cells
-    ]).set_table_attributes('style="border-collapse: collapse; width: 100%;"')  #
+        {'selector': 'thead th', 'props': [('font-weight', 'bold'), ('background-color', '#e0e0e0'), ('border-bottom', '2px solid #ccc')]},
+        {'selector': 'tbody tr:hover', 'props': [('background-color', '#f1f1f1')]},
+        {'selector': 'tbody td', 'props': [('padding', '8px')]},
+    ]).set_table_attributes('style="border-collapse: collapse; width: 100%;"')
 
-    # Display the styled dataframe
-    
-    st.write(styled_table)
+    # Convert the styled table to HTML
+    html_table = styled_table.render()
+
+    # Display the styled table as HTML in Streamlit
+    st.write(html_table, unsafe_allow_html=True)
 
 
 #--------------------------------------------------------------------------------------------
