@@ -142,23 +142,7 @@ elif selected_section == "University":
     university_show_df = pd.read_csv('datasets/numeric_table/university_profile_show.csv')
     university_show_df = university_show_df.set_index('University')
     
-    styled_table = university_show_df.style.set_properties(**{
-        'font-size': '14px',
-        'font-family': 'Arial',
-        'background-color': '#f9f9f9',
-        'border': '1px solid #ddd',
-        'text-align': 'left',
-    }).set_table_styles([
-        {'selector': 'thead th', 'props': [('font-weight', 'bold'), ('background-color', '#e0e0e0'), ('border-bottom', '2px solid #ccc')]},
-        {'selector': 'tbody tr:hover', 'props': [('background-color', '#f1f1f1')]},
-        {'selector': 'tbody td', 'props': [('padding', '8px')]},
-    ]).set_table_attributes('style="border-collapse: collapse; width: 100%;"')
-
-    # Convert the styled table to HTML
-    html_table = styled_table.render()
-
-    # Display the styled table as HTML in Streamlit
-    st.write(html_table, unsafe_allow_html=True)
+    st.dataframe(university_show_df) 
 
 
 #--------------------------------------------------------------------------------------------
