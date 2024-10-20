@@ -142,7 +142,8 @@ elif selected_section == "University":
     university_show_df = pd.read_csv('datasets/numeric_table/university_profile_show.csv')
     university_show_df = university_show_df.set_index('University')
     
-    st.dataframe(university_show_df) 
+    st.table(university_show_df)
+
 
 
 #--------------------------------------------------------------------------------------------
