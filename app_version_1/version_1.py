@@ -131,12 +131,14 @@ elif selected_section == "University":
                 devices, diagnostic tools, and therapies to enhance patient care and health outcomes.''')
     
 
-    university_df = pd.read_csv('datasets/numeric_table/university_profile_show.csv')
+    university_df = pd.read_csv('datasets/numeric_table/university_profile.csv')
     university_chart = draw_university_profile(university_df)
+
     st.altair_chart(university_chart, use_container_width=True)
     st.markdown('<br><br>', unsafe_allow_html=True) 
     
     # Customize the table's style (e.g., bold headers, font size, background color)
+    
     university_df = university_df.set_index('university_name')
     university_df.rename(columns={'total publications per year': 'total publications per year since 2014'}, inplace=True)
     styled_table = university_df.style.set_properties(**{
