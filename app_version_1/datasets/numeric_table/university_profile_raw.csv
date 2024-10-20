@@ -1,0 +1,36 @@
+university_name,number_of_pub,number_of_prof,number_per_prof,average_if,link
+University of Tokyo,2003.0,37,5.4135135135135135,6.055366949575635,https://bioeng.t.u-tokyo.ac.jp/en/faculty/
+Peking University,1649.0,25,6.595999999999999,8.095876288659793,https://future.pku.edu.cn/en/js/Faculty/index.htm
+Massachusetts Institute of Technology,2695.0,43,6.267441860465117,11.5908719851577,https://be.mit.edu/faculty/?exposed_search&exposed_taxonomy_role%5B0%5D=35&exposed_taxonomy_role%5B1%5D=34&exposed_taxonomy_role%5B2%5D=32
+Shanghai Jiao Tong University,6657.0,93,7.158064516129032,6.2290821691452605,https://en.bme.sjtu.edu.cn/lists-faculty.html
+University of California San Francisco,3158.0,57,5.540350877192982,9.357156428119064,https://bts.ucsf.edu/people/faculty
+Johns Hopkins University,6527.0,128,5.09921875,7.09992339512793,https://www.bme.jhu.edu/people/faculty/
+University of Sydney,520.0,28,1.8571428571428572,6.562884615384615,https://www.sydney.edu.au/engineering/schools/school-of-biomedical-engineering/academic-staff.html
+Georgia Institute of Technology,5366.0,154,3.484415584415584,6.8547148714125985,https://bioengineering.gatech.edu/program-faculty
+University of California San Diego,5076.0,99,5.127272727272727,9.994799054373523,https://be.ucsd.edu/faculty
+University of Oxford,883.0,22,4.013636363636364,6.653340883352208,https://ibme.ox.ac.uk/people/directory/?role=ac
+Columbia University,2063.0,53,3.8924528301886796,7.808628211342704,https://www.bme.columbia.edu/directory?gsarqfields%5Bbiotypetid%5D=30
+ETH Zurich,481.0,6,8.016666666666667,5.892723492723493,https://biomed.ee.ethz.ch/institute/People/principal-investigators.html
+Nanyang Technological University,1060.0,26,4.076923076923077,8.307264150943395,https://www.ntu.edu.sg/cceb/faculty-and-staff/chemical-engineering
+University College London,501.0,22,2.2772727272727273,5.215169660678643,https://www.ucl.ac.uk/biochemical-engineering/people/academics
+University of Cambridge,941.0,42,2.2404761904761905,9.588204038257173,https://www.eng.cam.ac.uk/people/strategic-research-theme/181?field_user_surname_value_1=&field_user_list_category_tid=216
+University of Pittsburgh,6798.0,176,3.8625,5.781435716387172,https://www.engineering.pitt.edu/departments/bioengineering/people/faculty-research-interests/
+Tsinghua University,1442.0,21,6.866666666666667,5.509639389736478,https://www.med.tsinghua.edu.cn/en/Faculty/DepartmentofBiomedicalEngineering.htm
+Northwestern University,1521.0,31,4.906451612903226,7.392570677186061,https://www.mccormick.northwestern.edu/biomedical/people/faculty/
+Duke University,2839.0,81,3.5049382716049378,7.13349771046143,https://bme.duke.edu/faculty
+University of Washington,2656.0,50,5.311999999999999,6.51769578313253,https://bioe.uw.edu/faculty-staff/core-faculty/
+Harvard University,757.0,12,6.308333333333334,10.954557463672392,https://seas.harvard.edu/bioengineering/people?role%5B46%5D=46
+University of California Berkeley,1283.0,29,4.424137931034482,9.066484801247077,https://bioeng.berkeley.edu/people
+McGill University,458.0,17,2.6941176470588237,6.569213973799126,https://www.mcgill.ca/bioengineering/people
+University of British Columbia,6673.5,85,7.851176470588236,6.163519892110586,https://bme.ubc.ca/people/?custom_cat=faculty
+National University of Singapore,983.0,26,3.7807692307692307,7.537029501525941,https://cde.nus.edu.sg/bme/about-us/people/academic-staff/?category=academic-3&search&sort=ASC
+University of California Los Angeles,4103.0,83,4.943373493975903,8.166926639044602,https://samueli.ucla.edu/search-faculty/#be
+University of Pennsylvania,2555.0,60,4.258333333333334,8.210841487279842,https://directory.seas.upenn.edu/bioengineering/
+University of Hong Kong,437.0,12,3.6416666666666666,5.795652173913043,https://www.engineering.hku.hk/bmeengg/people-faculty/
+University of Michigan,3591.0,81,4.433333333333334,6.050877192982456,https://bme.umich.edu/role/core/
+Cornell University,1097.0,33,3.324242424242424,7.007292616226071,https://www.bme.cornell.edu/bme/faculty-directory
+Stanford University,1789.0,32,5.590625,12.232643935159308,https://bioengineering.stanford.edu/people/faculty
+Rice University,697.0,24,2.904166666666667,8.35222381635581,https://bioengineering.rice.edu/people
+Carnegie Mellon University,1144.0,58,1.9724137931034484,6.598426573426574,https://www.cmu.edu/bme/People/Faculty/index.html
+Imperial College London,1820.0,55,3.3090909090909095,6.796758241758242,https://www.imperial.ac.uk/bioengineering/people/academic-staff-and-research-fellows/
+University of Toronto,3404.0,80,4.255,6.516186839012927,https://bme.utoronto.ca/faculty-research/core-faculty/

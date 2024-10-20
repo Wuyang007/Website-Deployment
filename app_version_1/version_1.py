@@ -131,7 +131,7 @@ elif selected_section == "University":
                 devices, diagnostic tools, and therapies to enhance patient care and health outcomes.''')
     
 
-    university_df = pd.read_csv('datasets/numeric_table/university_profile.csv')
+    university_df = pd.read_csv('datasets/numeric_table/university_profile_show.csv')
     university_chart = draw_university_profile(university_df)
     st.altair_chart(university_chart, use_container_width=True)
     st.markdown('<br><br>', unsafe_allow_html=True) 
