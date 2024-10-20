@@ -140,8 +140,7 @@ elif selected_section == "University":
     # Customize the table's style (e.g., bold headers, font size, background color)
     
     university_show_df = add_link(university_df)
-    university_show_df['link'] = university_show_df['link'].apply(lambda x: f'<a href="{x}" target="_blank">{x}</a>')
-
+    
 
     styled_table = university_show_df.style.set_properties(**{
         'font-size': '14px',
@@ -157,10 +156,7 @@ elif selected_section == "University":
 
     # Display the styled dataframe
     
-    html_table = styled_table.render(escape=False)  # Set escape=False to allow HTML rendering
-
-    # Display the styled DataFrame with clickable links
-    st.markdown(html_table, unsafe_allow_html=True)
+    st.write(styled_table)
 
     # university_show_df = university_show_df.set_index('University')
     
