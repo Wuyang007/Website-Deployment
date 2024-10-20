@@ -139,9 +139,10 @@ elif selected_section == "University":
     
     # Customize the table's style (e.g., bold headers, font size, background color)
     
-    university_df = university_df.set_index('university_name')
-    university_df.rename(columns={'total publications per year': 'total publications per year since 2014'}, inplace=True)
-    styled_table = university_df.style.set_properties(**{
+    university_show_df = pd.read_csv('datasets/numeric_table/university_profile_show.csv')
+    university_show_df = university_show_df.set_index('university_name')
+    
+    styled_table = university_show_df.style.set_properties(**{
         'font-size': '14px',
         'font-family': 'Arial',
         'background-color': '#f9f9f9',  # Slightly different light grey for a modern look
