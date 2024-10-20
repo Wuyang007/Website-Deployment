@@ -140,7 +140,7 @@ elif selected_section == "University":
     # Customize the table's style (e.g., bold headers, font size, background color)
     
     university_show_df = pd.read_csv('datasets/numeric_table/university_profile_show.csv')
-    university_show_df = university_show_df.set_index('university_name')
+    university_show_df = university_show_df.set_index('University')
     
     styled_table = university_show_df.style.set_properties(**{
         'font-size': '14px',
