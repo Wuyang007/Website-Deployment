@@ -54,5 +54,51 @@ def draw_university_profile(university_df):
 
     return chart
 
+def add_link(df):
+    link_dict = {
+        'Carnegie Mellon University': 'https://www.cmu.edu/bme/People/Faculty/index.html',
+        'Columbia University': 'https://www.bme.columbia.edu/directory?gsarqfields%5Bbiotypetid%5D=30',
+        'Cornell University': 'https://www.bme.cornell.edu/bme/faculty-directory',
+        'Duke University': 'https://bme.duke.edu/faculty',
+        'ETH Zurich': 'https://biomed.ee.ethz.ch/institute/People/principal-investigators.html',
+        'Georgia Institute of Technology': 'https://bioengineering.gatech.edu/program-faculty',
+        'Harvard University': 'https://seas.harvard.edu/bioengineering/people?role%5B46%5D=46',
+        'Imperial College London': 'https://www.imperial.ac.uk/bioengineering/people/academic-staff-and-research-fellows/',
+        'Johns Hopkins University': 'https://www.bme.jhu.edu/people/faculty/',
+        'Massachusetts Institute of Technology': 'https://be.mit.edu/faculty/?exposed_search&exposed_taxonomy_role%5B0%5D=35&exposed_taxonomy_role%5B1%5D=34&exposed_taxonomy_role%5B2%5D=32',
+        'McGill University': 'https://www.mcgill.ca/bioengineering/people',
+        'Nanyang Technological University': 'https://www.ntu.edu.sg/cceb/faculty-and-staff/chemical-engineering',
+        'National University of Singapore': 'https://cde.nus.edu.sg/bme/about-us/people/academic-staff/?category=academic-3&search&sort=ASC',
+        'Northwestern University': 'https://www.mccormick.northwestern.edu/biomedical/people/faculty/',
+        'Peking University': 'https://future.pku.edu.cn/en/js/Faculty/index.htm',
+        'Rice University': 'https://bioengineering.rice.edu/people',
+        'Shanghai Jiao Tong University': 'https://en.bme.sjtu.edu.cn/lists-faculty.html',
+        'Stanford University': 'https://bioengineering.stanford.edu/people/faculty',
+        'Tsinghua University': 'https://www.med.tsinghua.edu.cn/en/Faculty/DepartmentofBiomedicalEngineering.htm',
+        'University College London': 'https://www.ucl.ac.uk/biochemical-engineering/people/academics',
+        'University of British Columbia': 'https://bme.ubc.ca/people/?custom_cat=faculty',
+        'University of California Berkeley': 'https://bioeng.berkeley.edu/people',
+        'University of California Los Angeles': 'https://samueli.ucla.edu/search-faculty/#be',
+        'University of California San Diego': 'https://be.ucsd.edu/faculty',
+        'University of California San Francisco': 'https://bts.ucsf.edu/people/faculty',
+        'University of Cambridge': 'https://www.eng.cam.ac.uk/people/strategic-research-theme/181?field_user_surname_value_1=&field_user_list_category_tid=216',
+        'University of Hong Kong': 'https://www.engineering.hku.hk/bmeengg/people-faculty/',
+        'University of Michigan': 'https://bme.umich.edu/role/core/',
+        'University of Oxford': 'https://ibme.ox.ac.uk/people/directory/?role=ac',
+        'University of Pennsylvania': 'https://directory.seas.upenn.edu/bioengineering/',
+        'University of Pittsburgh': 'https://www.engineering.pitt.edu/departments/bioengineering/people/faculty-research-interests/',
+        'University of Sydney': 'https://www.sydney.edu.au/engineering/schools/school-of-biomedical-engineering/academic-staff.html',
+        'University of Washington': 'https://bioe.uw.edu/faculty-staff/core-faculty/',
+        'University of Tokyo': 'https://bioeng.t.u-tokyo.ac.jp/en/faculty/',
+        'University of Toronto': 'https://bme.utoronto.ca/faculty-research/core-faculty/',
+    }
+
+    def find_link(name):
+        return link_dict[name]
+    
+    df['link'] = df['university_name'].apply(find_link)
+
+    return df
+
 
 

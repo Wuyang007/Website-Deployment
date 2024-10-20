@@ -11,7 +11,7 @@ from PIL import Image
 import sys
 sys.path.append('../help_functions')
 
-from university_profile import draw_university_profile
+from university_profile import draw_university_profile, add_link
 from professor_profile import create_base_chart, find_best_paper, prof_univ_bar, univ_bar, profile_individual
 from topic_profile import topic_distribution
 from topic_time_series import draw_time_series_plot
@@ -139,7 +139,8 @@ elif selected_section == "University":
     
     # Customize the table's style (e.g., bold headers, font size, background color)
     
-    university_show_df = pd.read_csv('datasets/university_profile_raw.csv')
+    university_show_df = add_link(university_df)
+
     # university_show_df = university_show_df.set_index('University')
     
     st.table(university_show_df)
