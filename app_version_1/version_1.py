@@ -140,6 +140,8 @@ elif selected_section == "University":
     # Customize the table's style (e.g., bold headers, font size, background color)
     
     university_show_df = add_link(university_df)
+    university_show_df['link'] = university_show_df['link'].apply(lambda x: f'<a href="{x}" target="_blank">{x}</a>')
+
 
     styled_table = university_show_df.style.set_properties(**{
         'font-size': '14px',
