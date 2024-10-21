@@ -34,7 +34,7 @@ st.sidebar.markdown("<br>", unsafe_allow_html=True)
 st.sidebar.text_input("Search")
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
-selected_section = st.sidebar.radio("Go to", ["Overview", "University", 'Professor', 'Topics', 'Current Opportunities', "Ask us", "About this project"])
+selected_section = st.sidebar.radio("Go to", ["Overview", "University", 'Professor', 'Journals', 'Topics', 'Current Opportunities', "Ask us", "About this project"])
 
 
 st.sidebar.markdown("<div style='height: 100%;'></div>", unsafe_allow_html=True)
@@ -272,7 +272,8 @@ elif selected_section == "Topics":
     topic_chart_1 = draw_time_series_plot(selected_topic_2)
     st.altair_chart(topic_chart_1, use_container_width=True)
  
-
+elif selected_section == "Journal":
+    st.header("Section 2")
 
 elif selected_section == "Current Opportunities":
     st.header("Current graduate positions as below:")
