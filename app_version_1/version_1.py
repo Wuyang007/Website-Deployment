@@ -272,7 +272,7 @@ elif selected_section == "Topics":
     topic_chart_1 = draw_time_series_plot(selected_topic_2)
     st.altair_chart(topic_chart_1, use_container_width=True)
  
-elif selected_section == "Journal":
+elif selected_section == "Journals":
     st.header("Section 2")
     journal_image_folder = 'datasets/journal logo'
     journal_image_files = [os.path.join(journal_image_folder, file) for file in os.listdir(journal_image_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
