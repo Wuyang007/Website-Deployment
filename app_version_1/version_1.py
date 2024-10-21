@@ -273,11 +273,11 @@ elif selected_section == "Topics":
     st.altair_chart(topic_chart_1, use_container_width=True)
  
 elif selected_section == "Journals":
-    st.header("Section 2")
+    st.header("Popular Journals in Biomedical Engineering")
     journal_image_folder = 'datasets/journal logo'
     journal_image_files = [os.path.join(journal_image_folder, file) for file in os.listdir(journal_image_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
 
-    num_columns = 10  # Number of columns in the gallery
+    num_columns = 5  # Number of columns in the gallery
     desired_height = 300  # Adjust this value as needed
 
     # Loop through images and display them in a grid
