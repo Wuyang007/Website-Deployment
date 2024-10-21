@@ -276,19 +276,18 @@ elif selected_section == "Journal":
     st.header("Section 2")
     journal_image_folder = 'datasets/journal logo'
     journal_image_files = [os.path.join(journal_image_folder, file) for file in os.listdir(journal_image_folder) if file.endswith(('png', 'jpg', 'jpeg'))]
-    
+
     num_columns = 10  # Number of columns in the gallery
-    cols = st.columns(num_columns)
     desired_height = 300  # Adjust this value as needed
 
     # Loop through images and display them in a grid
     for idx, img_file in enumerate(journal_image_files):
-        # Determine which column to use for the current image
-        col_index = idx % num_columns
+        # Create a new row of columns for each set of 'num_columns' images
+        if idx % num_columns == 0:
+            cols = st.columns(num_columns)  # Create a new row
 
-        # Check if we need to create a new row (this is optional)
-        if idx > 0 and col_index == 0:
-            cols = st.columns(num_columns)  # Create new row of columns
+        # Determine the column index to place the image
+        col_index = idx % num_columns
 
         # Open and resize the image while maintaining aspect ratio
         image = Image.open(img_file)
@@ -300,9 +299,10 @@ elif selected_section == "Journal":
             st.image(image.resize((new_width, desired_height)), use_column_width='auto')  # Resize and display the image
 
             # Optional: Add a caption (use os.path.basename to extract the file name)
-            #st.caption(os.path.basename(img_file).split('.')[0])  # Display file name as caption
-    
-    st.markdown('<br>', unsafe_allow_html=True) 
+            # st.caption(os.path.basename(img_file).split('.')[0])  # Display file name as caption
+
+    # Add space after images (optional)
+    st.markdown('<br>', unsafe_allow_html=True)
 
 
 elif selected_section == "Current Opportunities":
